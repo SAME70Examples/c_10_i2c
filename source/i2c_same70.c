@@ -42,7 +42,7 @@ void i2c0_read_at(uint8_t address_7b, uint8_t internal_address, uint8_t *pData, 
     TWIHS0->TWIHS_MMR = TWIHS_MMR_DADR(address_7b) | TWIHS_MMR_IADRSZ_1_BYTE | TWIHS_MMR_MREAD;
     TWIHS0->TWIHS_IADR = internal_address;
     
-    TWIHS0->TWIHS_CR = TWIHS_CR_START;
+    TWIHS0->TWIHS_CR = (data_length > 1) ? TWIHS_CR_START : TWIHS_CR_START | TWIHS_CR_STOP;
     
     //read all but last byte
     for(int i = 0; i < (data_length - 1); i++){
@@ -51,7 +51,7 @@ void i2c0_read_at(uint8_t address_7b, uint8_t internal_address, uint8_t *pData, 
     }
     
     //Generate stop and read last byte
-    TWIHS0->TWIHS_CR = TWIHS_CR_STOP;
+    if(data_length > 1) TWIHS0->TWIHS_CR = TWIHS_CR_STOP;
     
     while(!(TWIHS0->TWIHS_SR & TWIHS_SR_RXRDY));//wait until rx ready
     pData[data_length - 1] = TWIHS0->TWIHS_RHR;
