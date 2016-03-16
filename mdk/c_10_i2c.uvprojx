@@ -424,7 +424,7 @@
       </component>
     </components>
     <files>
-      <file attr="config" category="source" condition="ARMCC Exe" name="arm\startup_SAME70.s">
+      <file attr="config" category="source" condition="ARMCC Exe" name="arm\startup_SAME70.s" version="1.0.0">
         <instance index="0">RTE\Device\ATSAME70Q21\startup_SAME70.s</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="Atmel" Cversion="1.0.0" condition="ATSAME70Q21"/>
         <package name="SAM-E_DFP" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="Keil" version="2.0.0"/>
@@ -432,7 +432,7 @@
           <targetInfo name="Target 1"/>
         </targetInfos>
       </file>
-      <file attr="config" category="source" condition="ARMCC Exe" name="arm\system_SAME70.c">
+      <file attr="config" category="source" condition="ARMCC Exe" name="arm\system_SAME70.c" version="1.0.0">
         <instance index="0">RTE\Device\ATSAME70Q21\system_SAME70.c</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="Atmel" Cversion="1.0.0" condition="ATSAME70Q21"/>
         <package name="SAM-E_DFP" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="Keil" version="2.0.0"/>

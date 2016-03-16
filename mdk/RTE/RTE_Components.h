@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Component Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'c_06_i2c' 
+ * Project: 'c_10_i2c' 
  * Target:  'Target 1' 
  */
 
